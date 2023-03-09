@@ -19,12 +19,12 @@ list_of_files = [
     "github/workflows/main.yaml",
     #f"src/(project_ame)/__init__.py",
     f"{project_name}/__init__.py",
-    F"{project_name}/components/__init__.py"
+    F"{project_name}/components/__init__.py",
     f"{project_name}/entity/__init__.py",
     f"{project_name}/pipeline/__init__.py",
     f"{project_name}/logger/__init__.py",
     f"{project_name}/config.py",
-    f"{project_name}/exception.py"
+    f"{project_name}/exception.py",
     f"{project_name}/predictor.py",
     f"{project_name}/utils.py",
     f"config/config.yaml",
