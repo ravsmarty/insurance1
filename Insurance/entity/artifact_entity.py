@@ -1,7 +1,16 @@
 from dataclasses import dataclass
-from Insurance.entity import config_entity
 
+"""
+@dataclass
+class DataIngestionArtifact:
+    feature_store_file_path: str
+    train_file_path: str
+    test_file_path: str
+
+"""
+
+@dataclass
 class DataIngestionArtifact:
     feature_store_file_path:str
-    train_file_path: str
+    train_file_path:str
     test_file_path:str
