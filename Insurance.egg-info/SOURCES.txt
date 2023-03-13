@@ -12,9 +12,16 @@ Insurance.egg-info/requires.txt
 Insurance.egg-info/top_level.txt
 Insurance/components/__init__.py
 Insurance/components/data_ingestion.py
+Insurance/components/data_transformation.py
+Insurance/components/data_validation.py
+Insurance/components/model_evaluation.py
+Insurance/components/model_pusher.py
+Insurance/components/model_trainer.py
 Insurance/entity/__init__.py
 Insurance/entity/artifact_entity.py
 Insurance/entity/config_entity.py
 Insurance/exception/__init__.py
 Insurance/logger/__init__.py
 Insurance/pipeline/__init__.py
+Insurance/pipeline/batch_prediction.py
+Insurance/pipeline/training_pipeline.py

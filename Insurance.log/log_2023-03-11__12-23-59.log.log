@@ -1,0 +1,45 @@
+[ 2023-03-11 12:24:02,274 ] root - INFO - Exporting collection data as pandas dataframe
+[ 2023-03-11 12:24:02,279 ] root - INFO - Reading data from database: INSURANCE and collection: INSURANCE_PROJECT
+[ 2023-03-11 12:24:02,404 ] root - INFO - Found columns: Index(['_id', 'age', 'sex', 'bmi', 'children', 'smoker', 'region', 'expenses'], dtype='object')
+[ 2023-03-11 12:24:02,405 ] root - INFO - Dropping column: _id 
+[ 2023-03-11 12:24:02,409 ] root - INFO - Row and columns in df: (2676, 7)
+[ 2023-03-11 12:24:02,410 ] root - INFO - Save data in feature store
+[ 2023-03-11 12:24:02,413 ] root - INFO - Create feature store folder if not available
+[ 2023-03-11 12:24:02,415 ] root - INFO - Save df to feature store folder
+[ 2023-03-11 12:24:02,451 ] root - INFO - split dataset into train and test set
+[ 2023-03-11 12:24:02,456 ] root - INFO - create dataset directory folder if not available
+[ 2023-03-11 12:24:02,457 ] root - INFO - Save df to feature store folder
+[ 2023-03-11 12:24:02,500 ] root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/03112023__122402/data_ingestion/feature_store/insurance.csv', train_file_path='/config/workspace/artifact/03112023__122402/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/03112023__122402/data_ingestion/dataset/test.csv')
+[ 2023-03-11 12:24:02,502 ] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-03-11 12:24:02,503 ] root - INFO - Reading base dataframe
+[ 2023-03-11 12:24:02,517 ] root - INFO - Replace na value in base df
+[ 2023-03-11 12:24:02,517 ] root - INFO - Drop null values columns from base df
+[ 2023-03-11 12:24:02,523 ] root - INFO - selecting column name which has contain null above to 0.2
+[ 2023-03-11 12:24:02,524 ] root - INFO - columns to drop :[]
+[ 2023-03-11 12:24:02,527 ] root - INFO - Reading train dataframe
+[ 2023-03-11 12:24:02,537 ] root - INFO - Reading test dataframe
+[ 2023-03-11 12:24:02,545 ] root - INFO - Drop null values columns train df
+[ 2023-03-11 12:24:02,551 ] root - INFO - selecting column name which has contain null above to 0.2
+[ 2023-03-11 12:24:02,552 ] root - INFO - columns to drop :[]
+[ 2023-03-11 12:24:02,555 ] root - INFO - Drop null values columns test df
+[ 2023-03-11 12:24:02,560 ] root - INFO - selecting column name which has contain null above to 0.2
+[ 2023-03-11 12:24:02,561 ] root - INFO - columns to drop :[]
+[ 2023-03-11 12:24:02,579 ] root - INFO - is all required columns present in train df
+[ 2023-03-11 12:24:02,580 ] root - INFO - is all required columns present in test df
+[ 2023-03-11 12:24:02,580 ] root - INFO - As all column are available in train df hence detecting data drift
+[ 2023-03-11 12:24:02,580 ] root - INFO - Hypothesis age: float64,float64 
+[ 2023-03-11 12:24:02,584 ] root - INFO - Hypothesis sex: object,object 
+[ 2023-03-11 12:24:02,592 ] root - INFO - Hypothesis bmi: float64,float64 
+[ 2023-03-11 12:24:02,596 ] root - INFO - Hypothesis children: float64,float64 
+[ 2023-03-11 12:24:02,598 ] root - INFO - Hypothesis smoker: object,object 
+[ 2023-03-11 12:24:02,607 ] root - INFO - Hypothesis region: object,object 
+[ 2023-03-11 12:24:02,617 ] root - INFO - Hypothesis expenses: float64,float64 
+[ 2023-03-11 12:24:02,620 ] root - INFO - As all column are available in test df hence detecting data drift
+[ 2023-03-11 12:24:02,621 ] root - INFO - Hypothesis age: float64,float64 
+[ 2023-03-11 12:24:02,624 ] root - INFO - Hypothesis sex: object,object 
+[ 2023-03-11 12:24:02,629 ] root - INFO - Hypothesis bmi: float64,float64 
+[ 2023-03-11 12:24:02,632 ] root - INFO - Hypothesis children: float64,float64 
+[ 2023-03-11 12:24:02,634 ] root - INFO - Hypothesis smoker: object,object 
+[ 2023-03-11 12:24:02,640 ] root - INFO - Hypothesis region: object,object 
+[ 2023-03-11 12:24:02,646 ] root - INFO - Hypothesis expenses: float64,float64 
+[ 2023-03-11 12:24:02,649 ] root - INFO - Write report in yaml file

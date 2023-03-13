@@ -1,0 +1,13 @@
+[ 2023-03-11 12:31:34,280 ] root - INFO - Exporting collection data as pandas dataframe
+[ 2023-03-11 12:31:34,280 ] root - INFO - Reading data from database: INSURANCE and collection: INSURANCE_PROJECT
+[ 2023-03-11 12:31:34,406 ] root - INFO - Found columns: Index(['_id', 'age', 'sex', 'bmi', 'children', 'smoker', 'region', 'expenses'], dtype='object')
+[ 2023-03-11 12:31:34,407 ] root - INFO - Dropping column: _id 
+[ 2023-03-11 12:31:34,412 ] root - INFO - Row and columns in df: (2676, 7)
+[ 2023-03-11 12:31:34,412 ] root - INFO - Save data in feature store
+[ 2023-03-11 12:31:34,416 ] root - INFO - Create feature store folder if not available
+[ 2023-03-11 12:31:34,417 ] root - INFO - Save df to feature store folder
+[ 2023-03-11 12:31:34,449 ] root - INFO - split dataset into train and test set
+[ 2023-03-11 12:31:34,455 ] root - INFO - create dataset directory folder if not available
+[ 2023-03-11 12:31:34,456 ] root - INFO - Save df to feature store folder
+[ 2023-03-11 12:31:34,491 ] root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/03112023__123134/data_ingestion/feature_store/insurance.csv', train_file_path='/config/workspace/artifact/03112023__123134/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/03112023__123134/data_ingestion/dataset/test.csv')
+[ 2023-03-11 12:31:34,493 ] root - INFO - >>>>>>>>>>> data validation >>>>>>>>
