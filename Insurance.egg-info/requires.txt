@@ -13,6 +13,6 @@ PyYAML
 numpy
 scikit-learn
 apache-airflow
-streamlit
 matplotlib
 seaborn
+flask
