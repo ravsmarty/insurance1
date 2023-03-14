@@ -1,65 +1,32 @@
-import streamlit as st
-# import preprocessor,helper
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-import seaborn as sns
+from flask import Flask,render_template,request
 import pickle
-import xgboost as xg
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import LabelEncoder
+import numpy as np
 
-model = pickle.load(open('model_final.pkl','rb'))
-encoder = pickle.load(open('target_encoder.pkl','rb'))
-transformer = pickle.load(open('transformer.pkl','rb'))
+app=Flask(__name__)
 
-st.title("Insurance Premium Prediction")
-age = st.text_input('Enter Age', 18)
-age = int(age)
+file=open("model_final.pkl","rb")
+model=pickle.load(file)
 
-sex = st.selectbox(
-    'Please select gender',
-    ('male', 'female'))
-# gender = encoder.transform(np.array([sex]))
+    
+@app.route('/')
+def home():
+    return render_template('index2.html')
 
-bmi = st.text_input('Enter BMI', 18)
-bmi = float(bmi)
+@app.route("/account_data", methods=["POST"])
+def get_data():
+    Age = request.form["Age"]
+    Gender = request.form["Gender"]
+    BMI = request.form["BMI"]
+    childrens = request.form["no_of_children"]
+    smoker = request.form["Smoker_or_not"]
+    Region = request.form["Enter_your_Region"]
+    Charges = request.form["Charges"]
+    
+    output=model.predict(np.array([[Age,Gender,BMI,childrens,smoker,Region,Charges]]).reshape(1,-1))
 
-children = st.selectbox(
-    'Please select number of children ',
-    (0,1,2,3,4,5))
-children = int(children)
+    if output[0]==1:
+      return "claim"
+    else:
+      return "no claim"
 
-
-smoker = st.selectbox(
-    'Please select smoker category ',
-    ("yes","no"))
-# smoker = encoder.transform(smoker)
-
-region = st.selectbox(
-    'Please select region ',
-    ("southwest", "southeast", "northeast", "northwest"))
-
-
-l = {}
-l['age'] = age
-l['sex'] = sex
-l['bmi'] = bmi
-l['children'] = children
-l['smoker'] = smoker
-l['region'] = region
-
-df = pd.DataFrame(l, index=[0])
-
-df['region'] = encoder.transform(df['region'])
-df['sex'] = df['sex'].map({'male':1, 'female':0})
-df['smoker'] = df['smoker'].map({'yes':1, 'no':0})
-
-df = transformer.transform(df)
-# dtrain = xg.DMatrix(df)
-y_pred = model.predict(df)
-# st.write(age, gender, bmi, children, smoker, region)
-
-if st.button("Show Result"):
-    # col1,col2, col3,col4 = st.columns(4)
-    st.header(f"{round(y_pred[0],2)} INR")
+app.run(port=8080)
